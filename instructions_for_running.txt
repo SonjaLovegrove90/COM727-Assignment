@@ -1,0 +1,63 @@
+Instructions to Run the Chatbot Program
+Prerequisites:
+Before running the program, ensure the following dependencies are installed:
+
+Python (version 3.6+ recommended)
+Required Python libraries:
+tensorflow
+numpy
+nltk
+matplotlib
+pickle
+json
+
+You can install the necessary libraries by running the following command in your terminal:
+
+bash
+Copy code
+pip install tensorflow numpy nltk matplotlib
+
+
+Step-by-Step Instructions:
+
+1. Download NLTK Data:
+You need to download some additional resources for nltk. Open a Python shell or a new script and run:
+
+python
+Copy code
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('stopwords')
+This will download the necessary tokenizers, wordnet, and stopwords required for processing text.
+
+2. Organize Files:
+Make sure you have the following files in your project directory:
+
+intents2.json (the file containing training data for the chatbot).
+chatbot_model.keras (the trained chatbot model).
+words.pkl and classes.pkl (pickle files containing tokenized words and class labels).
+
+3. Train the Model (Optional):
+If you want to retrain the chatbot model, run the script that includes the model training code. You can do this by running the Python script in the terminal:
+
+bash
+Copy code
+python train_chatbot.py
+This script will process your training data (intents2.json), create the neural network, train the model, and save it as chatbot_model.keras.
+
+4. Run the Chatbot:
+Once the model is trained (or if you're using a pre-trained model), you can run the chatbot. Execute the Python script that includes the chatbot interface:
+
+bash
+Copy code
+python chatbot.py
+The chatbot will load the pre-trained model and the required data (words.pkl, classes.pkl, intents2.json). Once started, the chatbot will prompt you to enter a message.
+
+5. Interacting with the Chatbot:
+Simply type your question or statement and press enter.
+The chatbot will respond based on the trained intent categories.
+To exit the chatbot, type Q and hit enter.
+
+6. View Model Training Accuracy (Optional):
+If you'd like to see the accuracy of the chatbot's training process, check the graph generated during the training process. The script will use matplotlib to plot the training accuracy vs loss over the epochs.
